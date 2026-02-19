@@ -1,135 +1,31 @@
-:root {
-    --primary-red: #ff5a5f;
-    --bg-gray: #f7f7f7;
-    --text-dark: #222;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 
-body {
-    margin: 0;
-    padding-bottom: 80px; /* Space for bottom nav */
-    background: var(--bg-gray);
-    font-family: 'Inter', sans-serif;
-}
+body { background: #f4f4f4; color: #333; }
 
-/* Search Bar */
-.top-header {
-    background: #fff;
-    padding: 15px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+header { background: #fff; padding: 15px; text-align: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; }
+.logo { font-size: 22px; font-weight: 700; letter-spacing: 1px; }
+.logo span { color: #b8860b; }
 
-.search-box {
-    background: #eee;
-    padding: 10px 15px;
-    border-radius: 50px;
-    display: flex;
-    align-items: center;
-}
+.hero { padding: 30px 20px; text-align: center; background: #fff; }
+.hero h1 { font-size: 24px; color: #222; }
+.hero p { font-size: 14px; color: #666; }
 
-.search-box input {
-    border: none;
-    background: transparent;
-    margin-left: 10px;
-    width: 100%;
-    outline: none;
-}
+/* Product Cards */
+.product-list { padding: 15px; }
+.product-card { background: #fff; border-radius: 12px; overflow: hidden; margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.product-card img { width: 100%; height: 250px; object-fit: cover; }
+.card-body { padding: 15px; }
+.card-body h3 { font-size: 18px; margin-bottom: 8px; }
+.card-body p { font-size: 14px; color: #555; margin-bottom: 15px; }
+.view-btn { display: inline-block; color: #b8860b; text-decoration: none; font-weight: 600; font-size: 14px; border-bottom: 2px solid #b8860b; padding-bottom: 2px; }
 
-/* Scrolling Filters */
-.filter-scroll {
-    display: flex;
-    overflow-x: auto;
-    padding: 10px;
-    gap: 10px;
-    background: #fff;
-    border-bottom: 1px solid #ddd;
-}
+/* Details Page */
+.detail-page { padding: 15px; background: #fff; min-height: 100vh; }
+.back-link { display: block; margin-bottom: 20px; text-decoration: none; color: #666; font-size: 14px; }
+.detail-gallery img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+.info-sheet { padding: 20px 0; }
+.info-sheet h3 { margin-bottom: 15px; border-bottom: 2px solid #b8860b; display: inline-block; }
+.info-sheet p { margin-bottom: 10px; font-size: 15px; }
+.whatsapp-btn { display: block; background: #25D366; color: white; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; }
 
-.filter-scroll::-webkit-scrollbar { display: none; }
-
-.f-btn {
-    white-space: nowrap;
-    padding: 8px 18px;
-    border-radius: 20px;
-    border: 1px solid #ddd;
-    background: #fff;
-    font-size: 14px;
-}
-
-.f-btn.active {
-    background: var(--text-dark);
-    color: #fff;
-    border-color: var(--text-dark);
-}
-
-/* Interior Cards */
-.content { padding: 15px; }
-.main-title { font-size: 20px; margin-bottom: 15px; }
-
-.interior-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-}
-
-.card-img-container { position: relative; height: 220px; }
-.card-img-container img { width: 100%; height: 100%; object-fit: cover; }
-.wishlist { position: absolute; top: 10px; right: 10px; background: #fff; padding: 8px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-
-.card-details { padding: 15px; }
-.card-details h3 { font-size: 16px; margin: 0 0 5px 0; color: #333; }
-.size-tag { font-size: 13px; color: #777; margin-bottom: 15px; }
-
-.action-btns { display: flex; gap: 10px; }
-.btn-outline { flex: 1; padding: 10px; border: 1.5px solid var(--primary-red); color: var(--primary-red); background: #fff; border-radius: 8px; font-weight: 600; cursor: pointer; }
-.btn-fill { flex: 1; padding: 10px; background: var(--primary-red); color: #fff; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; }
-
-/* Cost Calculator Floating */
-.cost-calc-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 12px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-left: 5px solid var(--primary-red);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    margin-top: 20px;
-}
-
-.calc-info { display: flex; align-items: center; gap: 12px; font-weight: 600; }
-
-/* Bottom Navigation */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #fff;
-    display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
-    box-shadow: 0 -2px 15px rgba(0,0,0,0.1);
-    z-index: 1000;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: #888;
-    text-align: center;
-    font-size: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.nav-item.active { color: var(--primary-red); }
-.nav-item .icon { font-size: 20px; margin-bottom: 2px; }
-
-/* Special Center Button */
-.special {
-    color: var(--primary-red);
-    font-weight: bold;
-}
+footer { text-align: center; padding: 20px; font-size: 12px; color: #999; }
